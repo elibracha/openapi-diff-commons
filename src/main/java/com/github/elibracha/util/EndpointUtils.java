@@ -1,4 +1,4 @@
-package com.github.elibracha.model.util;
+package com.github.elibracha.util;
 
 import com.github.elibracha.model.Endpoint;
 import io.swagger.v3.oas.models.Operation;

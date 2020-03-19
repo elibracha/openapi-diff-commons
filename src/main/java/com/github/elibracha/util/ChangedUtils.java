@@ -1,4 +1,4 @@
-package com.github.elibracha.model.util;
+package com.github.elibracha.util;
 
 
 import com.github.elibracha.model.Changed;
