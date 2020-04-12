@@ -1,10 +1,12 @@
 package com.github.elibracha.model;
 
-import com.github.elibracha.util.EndpointUtils;
 import io.swagger.v3.oas.models.OpenAPI;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import com.github.elibracha.utils.EndpointUtils;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;

@@ -1,10 +1,10 @@
 package com.github.elibracha.model.schema;
 
+import java.util.Objects;
+
 import com.github.elibracha.model.Changed;
 import com.github.elibracha.model.DiffContext;
 import com.github.elibracha.model.DiffResult;
-
-import java.util.Objects;
 
 public class ChangedMaxLength implements Changed {
   private final Integer oldValue;

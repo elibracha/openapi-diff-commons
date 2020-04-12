@@ -1,11 +1,11 @@
 package com.github.elibracha.model.schema;
 
+import java.util.Objects;
+import java.util.Optional;
+
 import com.github.elibracha.model.Changed;
 import com.github.elibracha.model.DiffContext;
 import com.github.elibracha.model.DiffResult;
-
-import java.util.Objects;
-import java.util.Optional;
 
 public class ChangedWriteOnly implements Changed {
   private final DiffContext context;

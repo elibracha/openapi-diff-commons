@@ -1,9 +1,8 @@
-package com.github.elibracha.util;
-
-
-import com.github.elibracha.model.Changed;
+package com.github.elibracha.utils;
 
 import java.util.Optional;
+
+import com.github.elibracha.model.Changed;
 
 public class ChangedUtils {
 
