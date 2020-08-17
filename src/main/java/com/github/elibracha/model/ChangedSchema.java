@@ -1,5 +1,7 @@
 package com.github.elibracha.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import io.swagger.v3.oas.models.media.Schema;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -17,6 +19,8 @@ import lombok.experimental.Accessors;
 @Getter
 @Setter
 @Accessors(chain = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonIgnoreProperties({"context","oldSchema","newSchema","type"})
 public class ChangedSchema implements ComposedChanged {
   protected DiffContext context;
   protected Schema oldSchema;

@@ -1,5 +1,7 @@
 package com.github.elibracha.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import io.swagger.v3.oas.models.responses.ApiResponse;
 import java.util.Arrays;
 import java.util.List;
@@ -10,6 +12,8 @@ import lombok.experimental.Accessors;
 @Getter
 @Setter
 @Accessors(chain = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonIgnoreProperties({"extensions","oldApiResponse","newApiResponse","context","description","headers","content","extensions"})
 public class ChangedResponse implements ComposedChanged {
   private final ApiResponse oldApiResponse;
   private final ApiResponse newApiResponse;

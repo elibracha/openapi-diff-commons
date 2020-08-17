@@ -1,5 +1,6 @@
 package com.github.elibracha.model;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.swagger.v3.oas.models.parameters.Parameter;
 import java.util.Arrays;
 import java.util.List;
@@ -10,6 +11,7 @@ import lombok.experimental.Accessors;
 @Getter
 @Setter
 @Accessors(chain = true)
+@JsonIgnoreProperties({"oldParameter", "newParameter","context","schema"})
 public class ChangedParameter implements ComposedChanged {
   private final DiffContext context;
   private Parameter oldParameter;
@@ -22,7 +24,9 @@ public class ChangedParameter implements ComposedChanged {
   private boolean changeExplode;
   private boolean changeAllowEmptyValue;
   private ChangedMetadata description;
+  @JsonIgnore
   private ChangedSchema schema;
+
   private ChangedContent content;
   private ChangedExtensions extensions;
 

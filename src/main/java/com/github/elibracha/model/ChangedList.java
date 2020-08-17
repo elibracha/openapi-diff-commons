@@ -3,6 +3,8 @@ package com.github.elibracha.model;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
@@ -10,6 +12,7 @@ import lombok.experimental.Accessors;
 @Getter
 @Setter
 @Accessors(chain = true)
+@JsonIgnoreProperties({"oldValue", "newValue","context"})
 public abstract class ChangedList<T> implements Changed {
   protected DiffContext context;
   protected List<T> oldValue;

@@ -1,5 +1,7 @@
 package com.github.elibracha.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import io.swagger.v3.oas.models.security.SecurityRequirement;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +14,8 @@ import org.apache.commons.collections4.CollectionUtils;
 @Getter
 @Setter
 @Accessors(chain = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonIgnoreProperties({"oldSecurityRequirements","newSecurityRequirements"})
 public class ChangedSecurityRequirements implements ComposedChanged {
   private List<SecurityRequirement> oldSecurityRequirements;
   private List<SecurityRequirement> newSecurityRequirements;
