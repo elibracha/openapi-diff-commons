@@ -1,5 +1,6 @@
 package com.github.elibracha.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.swagger.v3.oas.models.headers.Header;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +13,7 @@ import lombok.experimental.Accessors;
 @Getter
 @Setter
 @Accessors(chain = true)
+@JsonIgnoreProperties({"oldHeaders", "newHeaders","context"})
 public class ChangedHeaders implements ComposedChanged {
   private final Map<String, Header> oldHeaders;
   private final Map<String, Header> newHeaders;

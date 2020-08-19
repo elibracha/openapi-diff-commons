@@ -1,5 +1,6 @@
 package com.github.elibracha.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.swagger.v3.oas.models.media.Schema;
 import java.util.Collections;
 import java.util.List;
@@ -10,6 +11,7 @@ import lombok.experimental.Accessors;
 @Getter
 @Setter
 @Accessors(chain = true)
+@JsonIgnoreProperties({"oldSchema", "newSchema","context"})
 public class ChangedMediaType implements ComposedChanged {
   private final Schema oldSchema;
   private final Schema newSchema;

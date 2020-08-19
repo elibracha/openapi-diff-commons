@@ -1,5 +1,7 @@
 package com.github.elibracha.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import io.swagger.v3.oas.models.PathItem;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -10,6 +12,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonIgnoreProperties({"oldPathMap", "newPathMap"})
 public class ChangedPaths implements ComposedChanged {
   private final Map<String, PathItem> oldPathMap;
   private final Map<String, PathItem> newPathMap;

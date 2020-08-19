@@ -1,12 +1,12 @@
 package com.github.elibracha.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import io.swagger.v3.oas.models.OpenAPI;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
 import com.github.elibracha.utils.EndpointUtils;
-
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
@@ -15,15 +15,21 @@ import lombok.experimental.Accessors;
 @Getter
 @Setter
 @Accessors(chain = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonIgnoreProperties({"oldSpecOpenApi", "newSpecOpenApi","oldSpecOpenApi","newSpecOpenApi"})
 public class ChangedOpenApi implements ComposedChanged {
+
   private OpenAPI oldSpecOpenApi;
   private OpenAPI newSpecOpenApi;
-
+  @JsonInclude(JsonInclude.Include.NON_NULL)
   private List<Endpoint> newEndpoints;
+  @JsonInclude(JsonInclude.Include.NON_NULL)
   private List<Endpoint> missingEndpoints;
+  @JsonInclude(JsonInclude.Include.NON_NULL)
   private List<ChangedOperation> changedOperations;
+  @JsonInclude(JsonInclude.Include.NON_NULL)
   private ChangedExtensions changedExtensions;
-
+  @JsonInclude(JsonInclude.Include.NON_NULL)
   public List<Endpoint> getDeprecatedEndpoints() {
     return changedOperations.stream()
         .filter(ChangedOperation::isDeprecated)

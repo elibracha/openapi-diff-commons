@@ -1,5 +1,7 @@
 package com.github.elibracha.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import io.swagger.v3.oas.models.Operation;
 import io.swagger.v3.oas.models.PathItem;
 import java.util.ArrayList;
@@ -15,6 +17,8 @@ import lombok.experimental.Accessors;
 @Getter
 @Setter
 @Accessors(chain = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonIgnoreProperties({"pathUrl", "oldPath","newPath","context","extensions"})
 public class ChangedPath implements ComposedChanged {
   private final String pathUrl;
   private final PathItem oldPath;

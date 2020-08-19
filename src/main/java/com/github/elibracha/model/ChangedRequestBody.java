@@ -1,5 +1,7 @@
 package com.github.elibracha.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import io.swagger.v3.oas.models.parameters.RequestBody;
 import java.util.Arrays;
 import java.util.List;
@@ -11,6 +13,8 @@ import lombok.experimental.Accessors;
 @Getter
 @Setter
 @Accessors(chain = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonIgnoreProperties({"oldRequestBody", "newRequestBody","context","changeRequired"})
 public class ChangedRequestBody implements ComposedChanged {
   private final RequestBody oldRequestBody;
   private final RequestBody newRequestBody;

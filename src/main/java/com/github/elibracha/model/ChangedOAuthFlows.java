@@ -1,5 +1,6 @@
 package com.github.elibracha.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.swagger.v3.oas.models.security.OAuthFlows;
 import java.util.Arrays;
 import java.util.List;
@@ -11,6 +12,7 @@ import lombok.experimental.Accessors;
 @Getter
 @Setter
 @Accessors(chain = true)
+@JsonIgnoreProperties({"oldOAuthFlows", "newOAuthFlows"})
 public class ChangedOAuthFlows implements ComposedChanged {
   private final OAuthFlows oldOAuthFlows;
   private final OAuthFlows newOAuthFlows;

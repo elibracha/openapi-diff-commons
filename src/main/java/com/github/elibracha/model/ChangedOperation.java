@@ -1,5 +1,7 @@
 package com.github.elibracha.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.swagger.v3.oas.models.Operation;
 import io.swagger.v3.oas.models.PathItem;
 import java.util.Arrays;
@@ -11,13 +13,16 @@ import lombok.experimental.Accessors;
 @Getter
 @Setter
 @Accessors(chain = true)
+@JsonIgnoreProperties({"summary","oldOperation","newOperation","extensions"})
 public class ChangedOperation implements ComposedChanged {
   private Operation oldOperation;
   private Operation newOperation;
 
   private String pathUrl;
   private PathItem.HttpMethod httpMethod;
+  @JsonIgnore
   private ChangedMetadata summary;
+  @JsonIgnore
   private ChangedMetadata description;
   private boolean deprecated;
   private ChangedParameters parameters;

@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
@@ -13,6 +15,7 @@ import lombok.experimental.Accessors;
 @Getter
 @Setter
 @Accessors
+@JsonIgnoreProperties({"oldExtensions", "newExtensions","context"})
 public class ChangedExtensions implements ComposedChanged {
   private final Map<String, Object> oldExtensions;
   private final Map<String, Object> newExtensions;
