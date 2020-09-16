@@ -4,7 +4,7 @@
 
     <groupId>com.github.elibracha</groupId>
     <artifactId>openapi-diff-commons</artifactId>
-    <version>1.0.41-SNAPSHOT</version>
+    <version>1.0.41</version>
 
     <parent>
         <groupId>org.sonatype.oss</groupId>
@@ -26,7 +26,7 @@
         <connection>scm:git:git://github.com/elibracha/openapi-diff-commons.git</connection>
         <developerConnection>scm:git:git@github.com:elibracha/openapi-diff-commons.git</developerConnection>
         <url>https://github.com/elibracha/openapi-diff-commons</url>
-        <tag>openapi-diff-commons-1.0.3</tag>
+        <tag>openapi-diff-commons-1.0.41</tag>
     </scm>
 
     <distributionManagement>
